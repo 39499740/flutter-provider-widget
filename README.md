@@ -7,4 +7,4 @@
 
 
 
-[](./pic/pic1.gif)
+[]([./pic/pic1.gif](https://github.com/39499740/flutter-provider-widget/blob/master/pic/pic1.gif))
