@@ -6,5 +6,4 @@
 插件的功能非常简单，建立一个基于Provider的StatelessWidget组件
 
 
-
-[]([./pic/pic1.gif](https://github.com/39499740/flutter-provider-widget/blob/master/pic/pic1.gif))
+![演示图片](https://github.com/39499740/flutter-provider-widget/blob/master/pic/pic1.gif)
