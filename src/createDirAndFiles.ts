@@ -1,3 +1,11 @@
+/*
+ * @Author: 郝怿
+ * @Date: 2022-01-25 00:13:34
+ * @LastEditTime: 2022-04-24 14:10:39
+ * @LastEditors: 郝怿
+ * @Description: 
+ * @FilePath: /flutter-provider-less/src/createDirAndFiles.ts
+ */
 import { join } from "path";
 import * as fs from "fs";
 
@@ -28,7 +36,7 @@ class ${PG}Page extends StatelessWidget {
     @override
     Widget build(BuildContext context) {
         return ChangeNotifierProvider(
-            create: (BuildContext context) => ${PG}Provider(context),
+            create: (BuildContext context) => ${PG}Provider(),
             builder: (context, child) => _buildPage(context),
         );
     }
@@ -37,7 +45,9 @@ class ${PG}Page extends StatelessWidget {
         final p = context.read<${PG}Provider>();
         final pp = Provider.of<${PG}Provider>(context,listen: true);
         p.init();
-        return Container();
+        return Scaffold(
+          key: p.scaffoldkey,
+        );
     }
 }`
 
@@ -55,15 +65,17 @@ function createProviderPage(dirPath: string, pageName: string) {
 import 'package:flutter/material.dart';
 
 class ${PG}Provider extends ChangeNotifier {
-    BuildContext context;
-    ${PG}Provider(this.context);
+    BuildContext? context;
+    var scaffoldkey = GlobalKey<ScaffoldState>();
       
     bool _initialized = false;
       
     void init() {
         if (!_initialized) {
             _initialized = true;
-            Future.delayed(const Duration(milliseconds: 100), () {});
+            Future.delayed(const Duration(milliseconds: 100), () {
+                context = scaffoldkey.currentContext;
+            });
         }
     }
 }

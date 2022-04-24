@@ -1,8 +1,10 @@
 {
-  "name": "flutter-provider-widget",
+	"name": "flutter-provider-widget",
 	"displayName": "flutter_provider_widget",
 	"description": "",
-	"version": "0.0.1",
+	"version": "1.0.0",
+	"publisher": "39499740",
+	"author": "天国的502",
 	"engines": {
 		"vscode": "^1.63.0"
 	},
@@ -10,7 +12,7 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:createproviderpage"
+		"onCommand:createproviderpage"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -21,11 +23,11 @@
 			}
 		],
 		"menus": {
-			"explorer/context":[
+			"explorer/context": [
 				{
 					"command": "createproviderpage",
 					"group": "1_modification",
-					"when":"explorerResourceIsFolder"
+					"when": "explorerResourceIsFolder"
 				}
 			]
 		}
